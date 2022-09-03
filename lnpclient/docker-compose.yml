@@ -7,7 +7,7 @@ services:
       APP_PORT: $APP_BTC_RPC_EXPLORER_PORT
       
   web:
-    image: iraszl/lnpclient:v0.1.1
+    image: iraszl/lnpclient:v0.1.2
     restart: on-failure
     stop_grace_period: 1m
     environment:
