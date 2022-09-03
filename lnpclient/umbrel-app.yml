@@ -1,0 +1,25 @@
+manifestVersion: 1
+id: lnpclient
+category: Explorers
+name: LN+
+version: "0.1.0"
+tagline: Database-free lightning swaps coordination
+description: >-
+  LN+ is ...
+releaseNotes: >-
+  Beta version...
+developer: Alan Plus
+website: https://lightningnetwork.plus
+dependencies:
+  - bitcoin
+  - electrs
+repo: https://github.com/Lightning-Network-Plus/lnpclient
+support: https://github.com/janoside/btc-rpc-explorer/discussions
+port: 3002
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
