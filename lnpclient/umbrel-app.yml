@@ -2,7 +2,7 @@ manifestVersion: 1
 id: lnpclient
 category: Explorers
 name: LN+
-version: "0.1.0"
+version: "0.1.1"
 tagline: Database-free lightning swaps coordination
 description: >-
   LN+ is ...
