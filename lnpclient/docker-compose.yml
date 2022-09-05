@@ -12,7 +12,7 @@ services:
     stop_grace_period: 1m
     environment:
       # LND connection details
-      LN_SERVER_URL: "https://$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_REST_PORT"
+      LN_SERVER_URL: "10.21.21.9:10009"
       MACAROON_PATH: "/home/ubuntu/umbrel/app-data/lightning/data/lnd/data/chain/bitcoin/mainnet/admin.macaroon"
       CONFIG_PATH: "/lnd/lnd.conf"
 
