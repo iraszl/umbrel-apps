@@ -3,33 +3,22 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: $APP_BTC_RPC_EXPLORER_IP
-      APP_PORT: $APP_BTC_RPC_EXPLORER_PORT
+      APP_HOST: $APP_LN_PLUS_IP
+      APP_PORT: $APP_LN_PLUS_PORT
       
   web:
-    image: iraszl/lnpclient:v0.1.2
+    image: iraszl/lnpclient:v0.1.3
     restart: on-failure
     stop_grace_period: 1m
     environment:
-      # Bitcoin Core connection details
-      BTCEXP_BITCOIND_HOST: $APP_BITCOIN_NODE_IP
-      BTCEXP_BITCOIND_PORT: $APP_BITCOIN_RPC_PORT
-      BTCEXP_BITCOIND_USER: $APP_BITCOIN_RPC_USER
-      BTCEXP_BITCOIND_PASS: $APP_BITCOIN_RPC_PASS
-
-      # Electrum connection details
-      BTCEXP_ELECTRUMX_SERVERS: "tcp://$APP_ELECTRS_NODE_IP:$APP_ELECTRS_NODE_PORT"
+      # LND connection details
+      LN_SERVER_URL: "https://$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_REST_PORT"
+      MACAROON_PATH: "/lnd/data/chain/bitcoin/$APP_BITCOIN_NETWORK"
+      CONFIG_PATH: "/lnd/lnd.conf"
 
       # App Config
-      BTCEXP_HOST: 0.0.0.0
-      DEBUG: "btcexp:*,electrumClient"
-      BTCEXP_ADDRESS_API: electrumx
-      BTCEXP_SLOW_DEVICE_MODE: "true"
-      BTCEXP_NO_INMEMORY_RPC_CACHE: "true"
-      BTCEXP_PRIVACY_MODE: "true"
-      BTCEXP_NO_RATES: "true"
-      BTCEXP_RPC_ALLOWALL: "false"
-      BTCEXP_BASIC_AUTH_PASSWORD: ""  
+      LN_IMPLEMENTATION: "LND"
+
     networks:
       default:
-        ipv4_address: $APP_BTC_RPC_EXPLORER_IP
+        ipv4_address: $APP_LN_PLUS_IP
