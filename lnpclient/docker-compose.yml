@@ -3,8 +3,8 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: $APP_THUNDERHUB_IP
-      APP_PORT: $APP_THUNDERHUB_PORT
+      APP_HOST: $APP_BTC_RPC_EXPLORER_IP
+      APP_PORT: $APP_BTC_RPC_EXPLORER_PORT
       
   web:
     image: iraszl/lnpclient:v0.1.3
@@ -21,4 +21,4 @@ services:
 
     networks:
       default:
-        ipv4_address: $APP_THUNDERHUB_IP
+        ipv4_address: $APP_BTC_RPC_EXPLORER_IP
