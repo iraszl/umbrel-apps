@@ -2,7 +2,7 @@ manifestVersion: 1
 id: lnpclient
 category: Lightning Node Management
 name: LN+
-version: "0.1.4"
+version: "0.1.5"
 tagline: Database-free Bitcoin Lightning Network liquidity swaps coordination
 description: >-
   Lightning Network Plus (LN+) is a free web app that helps the users of the Bitcoin Lightning Network organize themselves and create liquidity swap triangles, squares and pentagons, in order to create outgoing and incoming liquidity.

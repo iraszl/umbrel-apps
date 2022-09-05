@@ -7,13 +7,13 @@ services:
       APP_PORT: $APP_BTC_RPC_EXPLORER_PORT
       
   web:
-    image: iraszl/lnpclient:v0.1.4
+    image: iraszl/lnpclient:v0.1.5
     restart: on-failure
     stop_grace_period: 1m
     environment:
       # LND connection details
       LN_SERVER_URL: "https://$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_REST_PORT"
-      MACAROON_PATH: "/lnd/data/chain/bitcoin/$APP_BITCOIN_NETWORK"
+      MACAROON_PATH: "/home/ubuntu/umbrel/app-data/lightning/data/lnd/data/chain/bitcoin/mainnet/admin.macaroon"
       CONFIG_PATH: "/lnd/lnd.conf"
 
       # App Config
