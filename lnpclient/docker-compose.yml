@@ -13,8 +13,10 @@ services:
       - ${APP_LIGHTNING_NODE_DATA_DIR}:/lnd:ro
     environment:
       # LND connection details
-      LN_SERVER_URL: "https://$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_REST_PORT"
-      MACAROON_PATH: "/lnd/data/chain/bitcoin/$APP_BITCOIN_NETWORK"
+      # LN_SERVER_URL: "https://$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_REST_PORT"
+      LN_SERVER_URL: "10.21.21.9:10009"
+      # MACAROON_PATH: "/lnd/data/chain/bitcoin/$APP_BITCOIN_NETWORK"
+      MACAROON_PATH: "/home/ubuntu/umbrel/app-data/lightning/data/lnd/data/chain/bitcoin/mainnet/admin.macaroon"
       CONFIG_PATH: "/lnd/lnd.conf"
       CERTIFICATE_PATH: "/lnd/tls.cert"
       # App Config
