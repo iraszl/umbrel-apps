@@ -23,4 +23,4 @@ services:
       LN_IMPLEMENTATION: "LND"
     networks:
       default:
-        ipv4_address: $APP_LNPLUS_IP
+        ipv4_address: $APP_BTC_RPC_EXPLORER_IP
