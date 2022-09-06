@@ -6,11 +6,11 @@ services:
       APP_HOST: $APP_LNPLUS_IP
       APP_PORT: $APP_LNPLUS_PORT
   web:
-    image: iraszl/lnpclient:v0.1.6
+    image: iraszl/lnpclient:v0.1.7
     restart: on-failure
     stop_grace_period: 1m
     volumes:
-      - ${APP_LIGHTNING_NODE_DATA_DIR}:/home/node/.lnd:ro
+      - ${APP_LIGHTNING_NODE_DATA_DIR}:/lnd:ro
     environment:
       LN_IMPLEMENTATION: "LND"
       LN_SERVER_URL: https://$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_GRPC_PORT/
