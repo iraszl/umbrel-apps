@@ -3,22 +3,25 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: $APP_BTC_RPC_EXPLORER_IP
-      APP_PORT: $APP_BTC_RPC_EXPLORER_PORT
+      APP_HOST: $APP_LNPLUS_IP
+      APP_PORT: $APP_LNPLUS_PORT
       
   web:
-    image: iraszl/lnpclient:v0.1.5
+    image: iraszl/lnpclient:v0.1.6
     restart: on-failure
     stop_grace_period: 1m
+    volumes:
+      - $APP_LIGHTNING_NODE_DATA_DIR:/lnd:ro
     environment:
       # LND connection details
-      LN_SERVER_URL: "10.21.21.9:10009"
-      MACAROON_PATH: "/home/ubuntu/umbrel/app-data/lightning/data/lnd/data/chain/bitcoin/mainnet/admin.macaroon"
+      LN_SERVER_URL: "$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_REST_PORT"
+      MACAROON_PATH: "/lnd/data/chain/bitcoin/$APP_BITCOIN_NETWORK/admin.macaroon"
       CONFIG_PATH: "/lnd/lnd.conf"
+      CERTIFICATE_PATH: "/lnd/tls.cert"
 
       # App Config
       LN_IMPLEMENTATION: "LND"
 
     networks:
       default:
-        ipv4_address: $APP_BTC_RPC_EXPLORER_IP
+        ipv4_address: $APP_LNPLUS_IP
