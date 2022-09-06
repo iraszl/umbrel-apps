@@ -9,8 +9,8 @@ services:
     image: iraszl/lnpclient:v0.1.5
     restart: on-failure
     stop_grace_period: 1m
-    volumes:
-      - ${APP_LIGHTNING_NODE_DATA_DIR}:/lnd:ro
+    # volumes:
+    #   - ${APP_LIGHTNING_NODE_DATA_DIR}:/lnd:ro
     environment:
       # LND connection details
       # LN_SERVER_URL: "https://$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_REST_PORT"
