@@ -6,9 +6,11 @@ services:
       APP_HOST: $APP_LNPLUS_IP
       APP_PORT: $APP_LNPLUS_PORT
   web:
-    image: iraszl/lnpclient:v0.1.7
+    image: iraszl/lnpclient:v0.1.6
     restart: on-failure
     stop_grace_period: 1m
+    ports:
+      - "3337:3000"
     volumes:
       - ${APP_LIGHTNING_NODE_DATA_DIR}:/lnd:ro
     environment:
