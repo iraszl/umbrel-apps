@@ -3,8 +3,8 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: $APP_LNPLUS_IP
-      APP_PORT: $APP_LNPLUS_PORT
+      APP_HOST: $APP_BTC_RPC_EXPLORER_IP
+      APP_PORT: $APP_BTC_RPC_EXPLORER_PORT
   web:
     image: iraszl/lnpclient:v0.1.6
     restart: on-failure
