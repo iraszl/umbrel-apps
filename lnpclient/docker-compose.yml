@@ -10,13 +10,13 @@ services:
     restart: on-failure
     stop_grace_period: 1m
     volumes:
-      - $APP_LIGHTNING_NODE_DATA_DIR:/lnd:ro
+      - ${APP_LIGHTNING_NODE_DATA_DIR}:/lnd:ro
     environment:
-      LN_SERVER_URL: "$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_REST_PORT"
+      LN_IMPLEMENTATION: "LND"
+      LN_SERVER_URL: "https://$APP_LIGHTNING_NODE_IP:$APP_LIGHTNING_NODE_GRPC_PORT"
       MACAROON_PATH: "/lnd/data/chain/bitcoin/$APP_BITCOIN_NETWORK/admin.macaroon"
       CONFIG_PATH: "/lnd/lnd.conf"
       CERTIFICATE_PATH: "/lnd/tls.cert"
-      LN_IMPLEMENTATION: "LND"
     networks:
       default:
         ipv4_address: $APP_LNPLUS_IP
