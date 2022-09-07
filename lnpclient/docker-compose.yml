@@ -1,14 +1,10 @@
 version: "3.7"
 
 services:
-  app:
-    environment:
-      - RAILS_ENV=production
   app_proxy:
     environment:
       APP_HOST: $APP_LNPLUS_IP
       APP_PORT: $APP_LNPLUS_PORT
-      
   web:
     image: iraszl/lnpclient:v0.1.8
     restart: on-failure
