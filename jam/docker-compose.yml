@@ -7,7 +7,7 @@ services:
       APP_PORT: 80
 
   jam:
-    image: ghcr.io/joinmarket-webui/joinmarket-webui-standalone:v0.0.10-clientserver-v0.9.6@sha256:4287ebb5d7d9bda7acdc77662df7adf0b6e7a5974a39a314c3ec0e85336ec1d5
+    image: ghcr.io/joinmarket-webui/jam-standalone:v0.1.1-clientserver-v0.9.8@sha256:0b17e193c12b44323e8a815994457f69e0e8ee1299702e6fca7e8547352eafea
     restart: on-failure
     stop_grace_period: 1m
     init: true
@@ -25,8 +25,6 @@ services:
       jm_rpc_user: $APP_BITCOIN_RPC_USER
       jm_rpc_password: "${APP_BITCOIN_RPC_PASS}"
       jm_rpc_wallet_file: jam_default
-      jm_max_cj_fee_abs: 300000 # in sats
-      jm_max_cj_fee_rel: 0.0003 # 0.03%
     networks:
       default:
         ipv4_address: $APP_JAM_IP

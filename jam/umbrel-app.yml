@@ -2,8 +2,8 @@ manifestVersion: 1
 id: jam
 category: Finance
 name: Jam
-version: "0.0.10"
-tagline: A user-friendly UI for JoinMarket
+version: "0.1.1"
+tagline: Your sats. Your privacy. Your profit.
 description: >-
   Jam is a user-interface for JoinMarket with focus on
   user-friendliness.
@@ -13,15 +13,15 @@ description: >-
 
   The app provides sensible defaults and is easy to use for beginners while still providing the features advanced users expect.
 releaseNotes: >-
-  - In-app Orderbook
+  - Basic fee settings
 
-  - Improved Earn Report
+  - Display fee summary on Send page
 
-  - Address-reuse warnings
+  - Randomize mandatory fee config values on restarts
 
-  - Human-readable locktime for Fidelity Bonds
+  - Show sum of selected UTXOs in Jar details view
 
-  - And, last but not least: the famed UTXO drill-down view
+  - Display transaction ID on successful direct-send
 developer: JoinMarket WebUI Organisation
 website: https://jamapp.org
 dependencies:
@@ -37,3 +37,5 @@ path: ""
 defaultUsername: umbrel
 defaultPassword: ""
 deterministicPassword: true
+submitter: JoinMarket WebUI Organisation
+submission: https://github.com/getumbrel/umbrel/pull/1216

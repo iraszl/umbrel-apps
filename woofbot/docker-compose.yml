@@ -6,7 +6,7 @@ services:
       APP_HOST: $APP_WOOFBOT_WEB_IP
       APP_PORT: 8080
   web:
-    image: woofbot/woofbot:v0.2.0@sha256:bfcc02f752963eaf9f9c3bf2776e032194d218b0037f3c54ed19d8872a7f241b
+    image: woofbot/woofbot:v0.4.0@sha256:f84754c41668d256a917553a36e9b7e34241eedb541507a036ccd713a1a196b9
     restart: on-failure
     stop_grace_period: 1m
     environment:
